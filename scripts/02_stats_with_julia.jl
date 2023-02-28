@@ -59,13 +59,13 @@ end
 
 # ╔═╡ 40ba1bd6-3f71-4c7e-9e64-d906b517b7ab
 md"""
-#### Generate random sample from a probability distribution and visualize
+#### Generating random sample from a probability distribution and visualize
 """
 
 # ╔═╡ 132f7755-cb79-41dd-bc57-0c0a15d76b1c
 begin
 	norm_data = rand(Normal(0, 1), 1000)
-	histogram(norm_data)
+	histogram(norm_data, normalize=:probability)
 end
 
 # ╔═╡ 588de632-a4cd-491c-93be-ae4f9f29cac2
@@ -82,24 +82,14 @@ end
 
 # ╔═╡ c59721ac-9746-4c9e-9c3e-25fbdf02ef7a
 md"""
-#### Fitting distributions to a simulated data
+#### Estimating probabilities from a simulated data
 """
-
-# ╔═╡ 33c7641b-bab6-4781-9716-cce7addad34a
-begin
-	simu_data = rand(Normal(5, .05), 1000)
-	m = mean(simu_data)
-	s = std(simu_data)
-
-	# visualize your data through a histogram
-	histogram(simu_data)
-end
 
 # ╔═╡ a78cb744-8e19-420a-ba00-0e8030fe056e
 md"""
 ## References
-+ https://docs.juliaplots.org/latest/series_types/histogram/
-+ https://juliastats.org/Distributions.jl/stable/univariate/
++ [https://docs.juliaplots.org/latest/series_types/histogram/](https://docs.juliaplots.org/latest/series_types/histogram/)
++ [https://juliastats.org/Distributions.jl/stable/univariate/](https://juliastats.org/Distributions.jl/stable/univariate/)
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
@@ -122,7 +112,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.8.5"
 manifest_format = "2.0"
-project_hash = "f659a23564b072d0513230eb0b746264201c2b30"
+project_hash = "6db1f634bb86a60bab69a7fe006f409ccf28dd72"
 
 [[deps.ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
@@ -1184,7 +1174,7 @@ version = "1.4.1+0"
 """
 
 # ╔═╡ Cell order:
-# ╟─a763bd20-b694-11ed-083b-39056618dddd
+# ╠═a763bd20-b694-11ed-083b-39056618dddd
 # ╠═d0bf3399-d0c0-400a-8ac1-432b7223ccdf
 # ╠═b4e6298f-2234-49ce-b792-ef27243b0de5
 # ╠═e0ace5dd-1826-4656-a53d-aaf39cc4b7b7
@@ -1195,7 +1185,6 @@ version = "1.4.1+0"
 # ╠═588de632-a4cd-491c-93be-ae4f9f29cac2
 # ╠═ff0f698c-8a8b-4f6b-9b8e-b254ff5a3e4a
 # ╠═c59721ac-9746-4c9e-9c3e-25fbdf02ef7a
-# ╠═33c7641b-bab6-4781-9716-cce7addad34a
 # ╠═a78cb744-8e19-420a-ba00-0e8030fe056e
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
